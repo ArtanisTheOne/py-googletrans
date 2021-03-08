@@ -181,15 +181,8 @@ class Translator:
                 src = LANGCODES[src]
             else:
                 raise ValueError('invalid source language')
-
-        if dest not in LANGUAGES:
-            if dest in SPECIAL_CASES:
-                dest = SPECIAL_CASES[dest]
-            elif dest in LANGCODES:
-                dest = LANGCODES[dest]
-            else:
-                raise ValueError('invalid destination language')
-
+        print(f"Destination is: {dest}")
+        
         origin = text
         data, response = self._translate(text, dest, src)
 
